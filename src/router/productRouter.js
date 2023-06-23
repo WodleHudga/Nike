@@ -6,7 +6,6 @@ const {getProduct, getAllProducts} = require('../database/products');
 router.get('/', async (req, res) =>{
    try {
        const products = await getAllProducts();
-       console.log(products);
        res.send({status: 'ok', data: products});
    }catch (e){
        res.status(401).send({status: 'failed', error: e.message})
